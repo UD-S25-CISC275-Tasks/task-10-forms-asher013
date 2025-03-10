@@ -5,6 +5,7 @@ interface DoubleHalfState {
     setDhValue: (dhValue: number) => void;
     dhValue: number;
 }
+
 function Doubler({ setDhValue, dhValue }: DoubleHalfState): React.JSX.Element {
     //const [dhValue, setDhValue] = useState<number>(1);
     return (
