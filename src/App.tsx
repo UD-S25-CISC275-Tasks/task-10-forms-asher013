@@ -12,7 +12,7 @@ import { ShoveBox } from "./bad-components/ShoveBox";
 import { ChooseTeam } from "./bad-components/ChooseTeam";
 import { CheckAnswer } from "./form-components/CheckAnswer";
 import { GiveAttempts } from "./form-components/GiveAttempts";
-
+import { EditMode } from "./form-components/EditMode";
 function App(): React.JSX.Element {
     return (
         <div className="App">
@@ -23,6 +23,8 @@ function App(): React.JSX.Element {
             <CheckAnswer expectedAnswer=""></CheckAnswer>
             <hr></hr>
             <GiveAttempts></GiveAttempts>
+            <hr></hr>
+            <EditMode></EditMode>
             <hr></hr>
             <DoubleHalf></DoubleHalf>
             <hr></hr>
