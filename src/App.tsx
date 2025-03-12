@@ -13,6 +13,8 @@ import { ChooseTeam } from "./bad-components/ChooseTeam";
 import { CheckAnswer } from "./form-components/CheckAnswer";
 import { GiveAttempts } from "./form-components/GiveAttempts";
 import { EditMode } from "./form-components/EditMode";
+import { ChangeColor } from "./form-components/ChangeColor";
+
 function App(): React.JSX.Element {
     return (
         <div className="App">
@@ -25,6 +27,8 @@ function App(): React.JSX.Element {
             <GiveAttempts></GiveAttempts>
             <hr></hr>
             <EditMode></EditMode>
+            <hr></hr>
+            <ChangeColor></ChangeColor>
             <hr></hr>
             <DoubleHalf></DoubleHalf>
             <hr></hr>

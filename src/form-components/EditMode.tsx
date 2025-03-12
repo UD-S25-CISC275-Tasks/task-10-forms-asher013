@@ -16,13 +16,6 @@ export function EditMode(): React.JSX.Element {
     }
     return (
         <div>
-            <Form.Check
-                type="switch"
-                id="edit-check"
-                label="Edit"
-                checked={editMode}
-                onChange={toggleEditMode}
-            />
             <Form.Group controlId="formName">
                 <Form.Label>Name:</Form.Label>
                 <Form.Control
@@ -36,14 +29,21 @@ export function EditMode(): React.JSX.Element {
                     onChange={updateName}
                     disabled={!editMode}
                 />
+                <Form.Check
+                    type="checkbox"
+                    id="is-student-check"
+                    label="Student"
+                    checked={student}
+                    onChange={toggleStudent}
+                />
+                <Form.Switch
+                    type="switch"
+                    id="edit-check"
+                    label="Edit"
+                    checked={editMode}
+                    onChange={toggleEditMode}
+                />
             </Form.Group>
-            <Form.Check
-                type="checkbox"
-                id="is-student-check"
-                label="Student"
-                checked={student}
-                onChange={toggleStudent}
-            />
         </div>
     );
 }
