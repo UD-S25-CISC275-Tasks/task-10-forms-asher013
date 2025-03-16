@@ -16,34 +16,69 @@ export function EditMode(): React.JSX.Element {
     }
     return (
         <div>
-            <Form.Group controlId="formName">
-                <Form.Label>Name:</Form.Label>
-                <Form.Control
-                    type="text"
-                    value={
-                        editMode ? name
-                        : student ?
-                            name + " is a student"
-                        :   name + " is not a student"
-                    }
-                    onChange={updateName}
-                    disabled={!editMode}
-                />
-                <Form.Check
-                    type="checkbox"
-                    id="is-student-check"
-                    label="Student"
-                    checked={student}
-                    onChange={toggleStudent}
-                />
-                <Form.Switch
-                    type="switch"
-                    id="edit-check"
-                    label="Edit"
-                    checked={editMode}
-                    onChange={toggleEditMode}
-                />
-            </Form.Group>
+            <h3>Edit Mode</h3>
+            <Form.Check
+                type="switch"
+                id="edit-check"
+                label="Edit"
+                checked={editMode}
+                onChange={toggleEditMode}
+            />
+            {editMode ?
+                <div>
+                    <Form.Check
+                        type="checkbox"
+                        id="student-check"
+                        label="Student"
+                        checked={student}
+                        onChange={toggleStudent}
+                    />
+                    <Form.Group controlId="formName">
+                        <Form.Label>Name:</Form.Label>
+                        <Form.Control value={name} onChange={updateName} />
+                    </Form.Group>
+                </div>
+            :   <span>
+                    {student ?
+                        <div>{name} is a student</div>
+                    :   <div>{name} is not a student</div>}
+                </span>
+            }
         </div>
     );
+    /*<div>
+            <Form.Switch
+                type="switch"
+                id="edit-check"
+                label="Edit"
+                checked={editMode}
+                onChange={toggleEditMode}
+            />
+            <span>
+                <div>
+                    <Form.Check
+                        type="switch"
+                        id="is-student-check"
+                        label="Student"
+                        checked={student}
+                        onChange={toggleStudent}
+                    />
+                    <Form.Group controlId="formName">
+                        <Form.Label>Name:</Form.Label>
+                        <Form.Control
+                            value={
+                                editMode ? name
+                                : student ?
+                                    name + " is a student"
+                                :   name + " is not a student"
+                            }
+                            onChange={updateName}
+                            disabled={!editMode}
+                        />
+                    </Form.Group>
+                </div>
+            </span>
+        </div>
+    );
+    */
 }
